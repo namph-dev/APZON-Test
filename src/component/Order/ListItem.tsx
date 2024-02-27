@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import { Table } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { IOrder } from '../../types';
 
 const ListOrderItem: React.FC = () => {
@@ -14,39 +14,39 @@ const ListOrderItem: React.FC = () => {
 
     const itemColumns = [
         {
-            title: 'Name',
+            title: 'Tên Sản phẩm',
             dataIndex: 'name',
             key: 'name',
         },
         {
-            title: 'Customer Code',
+            title: 'Mã Khách hàng',
             dataIndex: 'customerCode',
             key: 'customerCode',
         },
         {
-            title: 'Product Code',
+            title: 'Tên khách hàng',
             dataIndex: 'productCode',
             key: 'productCode',
         },
         {
-            title: 'Document Date',
+            title: 'Ngày chứng từ',
             dataIndex: 'documentDate',
             key: 'documentDate',
             render: (text: any) => text ? new Date(text).toLocaleDateString() : 'N/A',
         },
         {
-            title: 'Quantity',
+            title: 'Số lượng',
             dataIndex: 'quantity',
             key: 'quantity',
         },
         {
-            title: 'Price',
+            title: 'Đơn giá',
             dataIndex: 'price',
             key: 'price',
             render: (text: any) => `${text.toLocaleString()} VND`,
         },
         {
-            title: 'Total',
+            title: 'Thành Tiền',
             dataIndex: 'total',
             key: 'total',
             render: (text: any) => `${text.toLocaleString()} VND`,
@@ -67,11 +67,11 @@ const ListOrderItem: React.FC = () => {
     const columns = [
         {
             title: 'No.',
-            key: 'no',
+            key: 'Số thứ tự',
             render: (text: any, record: IOrder, index: number) => `${index + 1}`,
         },
         {
-            title: 'Total Amount',
+            title: 'Tổng tiền',
             dataIndex: 'totalAmount',
             key: 'totalAmount',
             render: (text: number) => `${text.toLocaleString()} VND`,
