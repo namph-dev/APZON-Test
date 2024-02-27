@@ -1,5 +1,8 @@
-export interface ILineItem {
+export interface IOrderItem {
   id: string;
+  customerCode: string;
+  productCode: string;
+  documentDate: string;
   name: string;
   quantity: number;
   price: number;
@@ -8,6 +11,22 @@ export interface ILineItem {
 
 export interface IOrder {
   id: number;
-  items: ILineItem[];
+  items: IOrderItem[];
+  totalAmount: number;
+}
+export interface IBuyItem {
+  id: string;
+  customerCode: string;
+  productCode: string;
+  documentDate: string;
+  name: string;
+  quantity: number;
+  price: number;
+  total: number;
+}
+
+export interface IBuy {
+  id: number;
+  items: IBuyItem[];
   totalAmount: number;
 }
